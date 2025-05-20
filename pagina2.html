@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Segunda Página</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <nav>
+        <h1>MERCEARIA JONAS</h1>
+        <ul>
+            <li><a href="pagina2.html">Contato</a></li>
+            <li><a href="#">Agenda</a></li>
+            <li><a href="#">Programa</a></li>
+            <li><a href="#">Sobre Nós</a></li>
+            <li><a href="#">Mais</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="carrossel">
+            <img src="imagem1.jpg" class="slide">
+            <img src="imagem2.jpg" class="slide">
+            <img src="imagem3.jpg" class="slide">
+        </div>
+    </main>
+
+     <script>
+        const slides = document.querySelectorAll(".slide");
+        let index = 0;
+
+        function showSlide() {
+            slides.forEach((slide, i) => {
+                slide.classList.remove("active");
+                if (i === index) {
+                    slide.classList.add("active");
+                }
+            });
+            index = (index + 1) % slides.length;
+        }
+
+        slides[0].classList.add("active");
+        setInterval(showSlide, 2000);
+    </script>
+
+</body>
+</html>
